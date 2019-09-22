@@ -1,0 +1,11 @@
+/target/
+bin
+.metadata
+target/
+.DS_Store
+.classpath
+.error
+.project
+.settings
+target
+test-output
