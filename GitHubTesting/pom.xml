@@ -39,7 +39,6 @@
 						</property>
 					</systemProperties>
 					<!-- CircleCI build workaround -->
-					<argLine>${surefireArgLine} -Xms1024m -Xmx2048m</argLine>
 					<reuseForks>true</reuseForks>
 					<useSystemClassLoader>false</useSystemClassLoader>
 				</configuration>
