@@ -16,6 +16,6 @@ public void currentUserTest() throws Exception {
   GitHubApi api = new GitHubApi();
   
   User user = api.user();
-  assertThat(user.getLogin()).isEqualTo("mvd-bcn");
+  assertThat(user.getLogin()).isEqualTo("fail-mvd-bcn");
 }
 }
