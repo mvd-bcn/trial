@@ -46,6 +46,7 @@ jobs:
           command: |
             mkdir -p ~/test-results/testng/
             find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} ~/test-results/testng/ \;
+            find . -type f -regex ".*/target/surefire-reports/.*html" -exec cp {} ~/test-results/testng/ \;
           when: always
       - store_test_results:
           path: ~/test-results/testng
