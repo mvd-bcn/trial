@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="SmokeTest" parallel="methods" verbose="2"
+	thread-count="5">
+
+	<test name="SmokeTest">
+		<groups>
+			<run>
+				<include name="smoke" />
+				<exclude name="broken" />
+			</run>
+		</groups>
+
+		<classes>
+			<class
+				name="com.githubtest.AuthenticationTest">
+			</class>
+			<class
+				name="com.githubtest.CurrentUserTest">
+			</class>
+			<class
+				name="com.githubtest.GetFeedsTest">
+			</class>
+			<class
+				name="com.githubtest.GraphQLTest">
+			</class>
+			<class
+				name="com.githubtest.UsersTest">
+			</class>
+		</classes>
+	</test>
+
+</suite> 
