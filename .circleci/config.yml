@@ -42,8 +42,8 @@ jobs:
       - run: mvn integration-test
       
       - store_artifacts:
-        path: test-output/SmokeTest/SmokeTest.xml
-        destination: test-results
+          path: test-output/SmokeTest/SmokeTest.xml
+          destination: test-results
       
       - store_test_results:
           path: test-output
