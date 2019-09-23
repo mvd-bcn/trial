@@ -21,21 +21,22 @@ jobs:
       MAVEN_OPTS: -Xmx3200m
 
     steps:
-      - checkout
+      - checkout:
+          path: ~/trial
 
       # Download and cache dependencies
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "pom.xml" }}
+            - GitHubTesting-{{ checksum "pom.xml" }}
             # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
+            - GitHubTesting-
 
       - run: mvn dependency:go-offline
 
       - save_cache:
           paths:
             - ~/.m2
-          key: v1-dependencies-{{ checksum "pom.xml" }}
+          key: GitHubTesting-{{ checksum "pom.xml" }}
 
       # run tests!
-      - run: mvn test
+      - run: mvn clean install
