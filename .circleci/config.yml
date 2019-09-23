@@ -42,4 +42,4 @@ jobs:
       - run: mvn integration-test
       
       - store_test_results:
-          path: test-output
+          path: test-output/SmokeTest/SmokeTest.xml
