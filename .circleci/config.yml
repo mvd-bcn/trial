@@ -39,4 +39,4 @@ jobs:
           key: GitHubTesting-{{ checksum "pom.xml" }}
 
       # run tests!
-      - run: mvn test
+      - run: mvn integration-test
