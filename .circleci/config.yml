@@ -42,7 +42,7 @@ jobs:
       - run: mvn integration-test
       
       - store_artifacts:
-          path: test-output/SmokeTest/SmokeTest.xml
+          path: test-output/testng-results.xml
           destination: test-results
       
       - store_test_results:
