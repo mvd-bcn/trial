@@ -27,6 +27,9 @@
 			<class
 				name="com.githubtest.UsersTest">
 			</class>
+			<class
+				name="com.githubtest.IssuesTest">
+			</class>
 		</classes>
 	</test>
 

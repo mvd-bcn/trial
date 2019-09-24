@@ -3,6 +3,8 @@ package com.githubtest;
 import java.util.Base64;
 import java.util.List;
 
+import com.githubttest.pojo.Issue;
+import com.githubttest.pojo.Lock;
 import com.githubttest.pojo.User;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
@@ -52,6 +54,30 @@ public class GitHubApi {
     User user = User.fromJson(result);
     return user;
 
+  }
+
+  public Issue createIssue(Issue randomIssue) throws Exception {
+    APIHandler api = new APIHandler();
+
+    String result =
+        api.requestPostWithBodyJSONData(url + "repos/mvd-bcn/trial/issues", randomIssue.toJSON());
+    
+    return Issue.fromJson(result);
+
+  }
+
+  public void deleteLockIssue(Issue issue) throws Exception {
+    APIHandler api = new APIHandler();
+    String result = api.requestDelete(url + "repos/mvd-bcn/trial/issues/"+ issue.getNumber() + "/lock");
+    
+  }
+
+  public void lockIssue(Issue issue, Lock lock) throws Exception {
+    APIHandler api = new APIHandler();
+    
+    String result = api.requestPutWithBodyJSONData(url + "repos/mvd-bcn/trial/issues/"+ issue.getNumber() + "/lock",lock.toJSON());
+   
+    
   }
 
 }
